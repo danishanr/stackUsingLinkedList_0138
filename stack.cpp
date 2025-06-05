@@ -41,13 +41,13 @@ public :
     //IsEmpty operation: Check if stack is empty
     bool isEmpty()
     {
-        return top = NULL; // Return true if the top pointer is NULL, indicating an empty stack
+        return top == NULL; // Return true if the top pointer is NULL, indicating an empty stack
     }
 
     // Pop operation: Remove the topmost element from the stack
     void pop()
     {
-        Node *temp = top;
+        Node *temp = top; // Create a temporary pointer to the current top
         if (isEmpty())
         {
             cout << "Stack is empty." <<endl;
@@ -61,7 +61,6 @@ public :
    // Peek/Top operation: Retrieve the value of the topmost element without removing it
     void peek()
     {
-        Node *temp = top;
         if(isEmpty())
         {
             cout << "List is empty." << endl;
@@ -77,9 +76,7 @@ public :
             }
             cout << endl;
         } // Return the value of the top node
-
     }
-
 };
 
 int main()
@@ -97,6 +94,7 @@ int main()
         cout << "4. Exit\n";
         cout << "Enter your choice: ";  
         cin >> choice;
+
         switch (choice)
         {
         case 1:
@@ -110,10 +108,10 @@ int main()
         case 3:
             stack.peek();
             break;
+
         case 4:
             cout << "Exiting program. " << endl;
-            break;
-                
+            break;      
         default: 
             cout << "Invalid choice. Try again. " << endl;
             break;
